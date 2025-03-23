@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -18,13 +19,12 @@ class StartScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Text("Money Egg", textAlign: TextAlign.center, style: TextStyle(fontSize: 65, color: Color.fromRGBO(254, 76, 160, 1))),
+                padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+                child: Text("MONEY EGG", textAlign: TextAlign.center, style: GoogleFonts.silkscreen(fontSize: 80, color: Color.fromRGBO(254, 76, 160, 1))),
               ),
             ),
             SizedBox(height: 30),
-            Image.network("https://i.imgur.com/HablDhz.png"),
-            // Egg picture
+            Image.network("https://i.imgur.com/HablDhz.png", scale: 2),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, "/htp");
