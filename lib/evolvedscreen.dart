@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:drop_shadow_image/drop_shadow_image.dart';
 import 'package:money_egg/main.dart';
 
 void goToStage2(BuildContext context) {
@@ -16,7 +17,11 @@ class EvolvedScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(typeImage, scale: 3),
+            DropShadowImage(
+              image: Image.network(typeImage, scale: 3),
+              borderRadius: 50,
+              blurRadius: 50
+            ),
             SizedBox(height: 10),
             Container(
               margin: const EdgeInsets.fromLTRB(40, 0, 40, 0),

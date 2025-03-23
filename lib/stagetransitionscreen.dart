@@ -28,20 +28,17 @@ class StageTransitionScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 if (buyCount > saveCount) {
-                  // set type to spender
-                  scale = 3.5;
+                  scale = 3;
                   type = "Spender!\n\nEgg is now a compulsive spender and is irresponsible with its money.";
                   typeImage = "https://i.imgur.com/QBlTSZF.png";
                 }
                 else if (saveCount > buyCount) {
-                  // set type to saver
-                  scale = 3.5;
+                  scale = 3;
                   type = "Saver!\n\nEgg is now a responsible saver and knows how to budget.";
                   typeImage = "https://i.imgur.com/JqwA9bj.png";
                 }
                 else {
-                  // set type to saver
-                  scale = 3.5;
+                  scale = 3;
                   type = "Saver!\n\nEgg is now a responsible saver and knows how to budget.";
                   typeImage = "https://i.imgur.com/JqwA9bj.png";
                 }

@@ -54,7 +54,7 @@ int saveCount = 0;
 int buyCount = 0;
 String type = "";
 String typeImage = "https://i.imgur.com/iKhDk7N.png";
-double scale = 2;
+double scale = 1.5;
 
 // Ending Message
 String endMessage = "Congratulations!\n\n With your excellent guidance, Egg developed financial awareness and learned how to manage its money to pay off its debt in time!\n\nCan you save even more money next time?";
