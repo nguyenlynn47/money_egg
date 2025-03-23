@@ -9,6 +9,7 @@ class ShopScreen extends StatefulWidget {
 }
 
 class _ShopScreenState extends State<ShopScreen> {
+  String textPrompt = "Do you want to buy food or a new toy?";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,61 +75,68 @@ class _ShopScreenState extends State<ShopScreen> {
               child: Container(
                 color: Color.fromRGBO(236, 192, 250, 1),
                 child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            if ((bal - 30) >= 0) {
-                              hp = (hp + 25) % 101;
-                              bal -= 30;
-                              foodCount++;
-                              if (actionCount == 1) {
-                                Navigator.pushReplacementNamed(context, "/actions");
-                              }
-                              else {
-                                Navigator.pushReplacementNamed(context, "/next");
-                              }
-                            }
-                            else {
-                              print("You do not have enough to buy food");
-                            }
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(30),
-                          backgroundColor: Color.fromRGBO(255, 255, 117, 1),
-                        ),
-                        child: Icon(Icons.lunch_dining, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
-                      ),
-                      SizedBox(width: 90),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            if ((bal - 40) >= 0) {
-                              bal -= 40;
-                              toyCount++;
-                              // add toy to collection
-                              if (actionCount == 1) {
-                                Navigator.pushReplacementNamed(context, "/actions");
-                              }
-                              else {
-                                Navigator.pushReplacementNamed(context, "/next");
-                              }
-                            }
-                            else {
-                              print("You do not have enough to buy a toy");
-                            }
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(30),
-                          backgroundColor: Color.fromRGBO(255, 255, 117, 1),
-                        ),
-                        child: Icon(Icons.toys, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
+                      Text(textPrompt),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                if ((bal - 30) >= 0) {
+                                  hp = (hp + 25) % 101;
+                                  bal -= 30;
+                                  foodCount++;
+                                  if (actionCount == 1) {
+                                    Navigator.pushReplacementNamed(context, "/actions");
+                                  }
+                                  else {
+                                    Navigator.pushReplacementNamed(context, "/next");
+                                  }
+                                }
+                                else {
+                                  print("You do not have enough to buy food");
+                                }
+                              });
+                            },
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(30),
+                              backgroundColor: Color.fromRGBO(255, 255, 117, 1),
+                            ),
+                            child: Icon(Icons.lunch_dining, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
+                          ),
+                          SizedBox(width: 90),
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                if ((bal - 40) >= 0) {
+                                  bal -= 40;
+                                  toyCount++;
+                                  // add toy to collection
+                                  if (actionCount == 1) {
+                                    Navigator.pushReplacementNamed(context, "/actions");
+                                  }
+                                  else {
+                                    Navigator.pushReplacementNamed(context, "/next");
+                                  }
+                                }
+                                else {
+                                  textPrompt = "Insufficient funds. You can only buy food.";
+                                  print("You do not have enough to buy a toy");
+                                }
+                              });
+                            },
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(30),
+                              backgroundColor: Color.fromRGBO(255, 255, 117, 1),
+                            ),
+                            child: Icon(Icons.toys, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
+                          ),
+                        ],
                       ),
                     ],
                   ),
