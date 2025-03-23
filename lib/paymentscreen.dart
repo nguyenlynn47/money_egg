@@ -9,6 +9,7 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
+  String textPrompt = "You must pay \$250.\nIf you don't pay, you get a late fee of \$30.";
   @override
   Widget build (BuildContext context) {
     return Scaffold(
@@ -88,7 +89,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
-                                child: Text("You must pay \$250.\nIf you don't pay, you get a late fee of \$30.", textAlign: TextAlign.center, style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1))),
+                                child: Text(textPrompt, textAlign: TextAlign.center, style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1))),
                               ),
                             ),
                           ],
@@ -108,6 +109,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                     Navigator.pushReplacementNamed(context, "/event");
                                   }
                                   else {
+                                    textPrompt = "Insufficient funds. You cannot make a payment.";
                                     print("You do not have enough to pay your debt");
                                   }
                                 });

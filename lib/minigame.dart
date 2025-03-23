@@ -42,6 +42,7 @@ class _MinigameScreenState extends State<MinigameScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
           body: Stack(
