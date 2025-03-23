@@ -84,12 +84,19 @@ class EventScreenState extends State<EventScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
-                              child: Text(
-                                textPrompt,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1)),
+                            Container(
+                              margin: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+                                child: Text(
+                                  textPrompt,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1)),
+                                ),
                               ),
                             ),
                           ],

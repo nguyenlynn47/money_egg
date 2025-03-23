@@ -105,7 +105,18 @@ class _NextScreenState extends State<NextScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Go to the Next Day", style: TextStyle(fontSize: 24, color: Color.fromRGBO(32, 90, 234, 1))),
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+                          child: Text("Go to the next day", style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1))),
+                        ),
+                      ),
+                      SizedBox(height: 40),
                       ElevatedButton(
                         onPressed: () {
                           nextDay(context);

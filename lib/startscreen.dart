@@ -18,12 +18,11 @@ class StartScreen extends StatelessWidget {
                 Navigator.pushReplacementNamed(context, "/htp");
               },
               style: ElevatedButton.styleFrom(
-                shape: CircleBorder(),
-                padding: EdgeInsets.all(50),
+                padding: EdgeInsets.all(25),
                 backgroundColor: Color.fromRGBO(255, 255, 117, 1),
                 foregroundColor: Color.fromRGBO(254, 254, 91, 1),
               ),
-              child: Text("HOW TO PLAY", style: TextStyle(fontSize: 30, color: Color.fromRGBO(254, 76, 160, 1)),),
+              child: Text("How to Play", style: TextStyle(fontSize: 30, color: Color.fromRGBO(254, 76, 160, 1)),),
             ),
           ],
         ),

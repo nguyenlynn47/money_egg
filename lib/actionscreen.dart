@@ -78,7 +78,17 @@ class _ActionScreenState extends State<ActionScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(textPrompt),
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+                          child: Text(textPrompt, style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1))),
+                        ),
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
