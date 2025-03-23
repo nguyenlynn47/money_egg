@@ -63,6 +63,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           ),
                         ],
                       ),
+                      Image.network(typeImage, scale: scale),
                     ],
                     // Image of pet
                     // Collection button in corner
@@ -104,8 +105,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               onPressed: () {
                                 setState(() {
                                   if (bal >= 250) {
-                                    bal -= 200;
-                                    debt -= 200;
+                                    bal -= 250;
+                                    debt -= 250;
                                     Navigator.pushReplacementNamed(context, "/event");
                                   }
                                   else {

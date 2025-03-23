@@ -16,6 +16,8 @@ class EvolvedScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.network(typeImage, scale: 3),
+            SizedBox(height: 10),
             Container(
               margin: const EdgeInsets.fromLTRB(40, 0, 40, 0),
               decoration: BoxDecoration(

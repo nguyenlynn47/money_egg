@@ -63,6 +63,7 @@ class _ActionScreenState extends State<ActionScreen> {
                           ),
                         ],
                       ),
+                      Image.network(typeImage, scale: scale),
                     ],
                     // Image of pet
                     // Collection button in corner

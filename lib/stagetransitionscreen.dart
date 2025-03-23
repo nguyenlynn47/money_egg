@@ -29,18 +29,21 @@ class StageTransitionScreen extends StatelessWidget {
               onPressed: () {
                 if (buyCount > saveCount) {
                   // set type to spender
-                  type = "Spender!\n\ndescription";
-                  typeImage = "";
+                  scale = 3.5;
+                  type = "Spender!\n\nEgg is now a compulsive spender and is irresponsible with its money.";
+                  typeImage = "https://i.imgur.com/QBlTSZF.png";
                 }
                 else if (saveCount > buyCount) {
                   // set type to saver
-                  type = "Saver!\n\ndescription";
-                  typeImage = "";
+                  scale = 3.5;
+                  type = "Saver!\n\nEgg is now a responsible saver and knows how to budget.";
+                  typeImage = "https://i.imgur.com/JqwA9bj.png";
                 }
                 else {
                   // set type to saver
-                  type = "Saver!\n\ndescription";
-                  typeImage = "";
+                  scale = 3.5;
+                  type = "Saver!\n\nEgg is now a responsible saver and knows how to budget.";
+                  typeImage = "https://i.imgur.com/JqwA9bj.png";
                 }
                 Navigator.pushReplacementNamed(context, "/evolved");
               },

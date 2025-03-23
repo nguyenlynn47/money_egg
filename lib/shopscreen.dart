@@ -63,6 +63,7 @@ class _ShopScreenState extends State<ShopScreen> {
                           ),
                         ],
                       ),
+                      Image.network(typeImage, scale: scale),
                     ],
                     // Image of pet
                     // Collection button in corner
@@ -136,7 +137,7 @@ class _ShopScreenState extends State<ShopScreen> {
                                   }
                                 }
                                 else {
-                                  textPrompt = "Insufficient funds. You can only buy food.";
+                                  textPrompt = "Insufficient funds.\nYou can only buy food.";
                                   print("You do not have enough to buy a toy");
                                 }
                               });

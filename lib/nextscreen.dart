@@ -100,6 +100,7 @@ class _NextScreenState extends State<NextScreen> {
                           ),
                         ],
                       ),
+                      Image.network(typeImage, scale: scale),
                     ],
                     // Image of pet
                     // Collection button in corner
