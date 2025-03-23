@@ -5,17 +5,27 @@ void nextDay(BuildContext context) {
   day++;
   hp -= 15;
   actionCount = 2;
+  paymentDueDate--;
   if (hp <= 0) {
-    // Set end message here
+    endMessage = "Oh no...\n\nEgg starved to death because of lack of financial awareness...";
     Navigator.pushReplacementNamed(context, "/end");
   }
-  paymentDueDate--;
-  if (paymentDueDate == 0) {
-    paymentDueDate = 3;
+  else if (paymentDueDate == 0) {
+    if (day == 11) {
+      paymentDueDate = 2;
+    }
+    else {
+      paymentDueDate = 3;
+    }
     Navigator.pushReplacementNamed(context, "/payment");
   }
   else if (day == 14) {
-    // Set end message here
+    if (debt > 0 && bal > debt) {
+      endMessage = "Congratulations!\n\nEgg saved enough money to pay off the rest of the debt.\n\nCan you save even more money next time?";
+    }
+    else if (debt > 0) {
+      endMessage = "Oh no...\n\nEgg wasn't able to pay off the debt in time, and the government had to seize its home.\n\nLet's try to practice good saving and spending habits so that Egg learns how to be financially aware next time.";
+    }
     Navigator.pushReplacementNamed(context, "/end");
   }
   else if (day == 6) {

@@ -111,7 +111,7 @@ class _ActionScreenState extends State<ActionScreen> {
                             ),
                             child: Icon(Icons.shopping_basket, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
                           ),
-                          SizedBox(width: 90),
+                          SizedBox(width: 120),
                           ElevatedButton(
                             onPressed: () {
                               setState(() {

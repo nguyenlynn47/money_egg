@@ -76,47 +76,64 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 child: Center(
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Text("You must pay \$200.\nIf you don't pay, you get a late fee of \$30.", style: TextStyle(fontSize: 24, color: Color.fromRGBO(32, 90, 234, 1))),
-                        ],
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+                                child: Text("You must pay \$250.\nIf you don't pay, you get a late fee of \$30.", textAlign: TextAlign.center, style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1))),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                if (bal >= 200) {
-                                  bal -= 200;
-                                  debt -= 200;
+                      SizedBox(
+                        height: 250,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  if (bal >= 250) {
+                                    bal -= 200;
+                                    debt -= 200;
+                                    Navigator.pushReplacementNamed(context, "/event");
+                                  }
+                                  else {
+                                    print("You do not have enough to pay your debt");
+                                  }
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.all(30),
+                                backgroundColor: Color.fromRGBO(255, 255, 117, 1),
+                              ),
+                              child: Text("Pay", style: TextStyle(fontSize: 30, color: Color.fromRGBO(254, 76, 160, 1))),
+                            ),
+                            SizedBox(width: 120),
+                            ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  debt += 30;
                                   Navigator.pushReplacementNamed(context, "/event");
-                                }
-                                else {
-                                  print("You do not have enough to pay your debt");
-                                }
-                              });
-                            },
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(30),
-                              backgroundColor: Color.fromRGBO(255, 255, 117, 1),
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.all(30),
+                                backgroundColor: Color.fromRGBO(255, 255, 117, 1),
+                              ),
+                              child: Text("Don't Pay", style: TextStyle(fontSize: 30, color: Color.fromRGBO(254, 76, 160, 1))),
                             ),
-                            child: Text("Pay", style: TextStyle(color: Color.fromRGBO(254, 76, 160, 1))),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                debt += 30;
-                                Navigator.pushReplacementNamed(context, "/event");
-                              });
-                            },
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.all(30),
-                              backgroundColor: Color.fromRGBO(255, 255, 117, 1),
-                            ),
-                            child: Text("Don't Pay", style: TextStyle(color: Color.fromRGBO(254, 76, 160, 1))),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ],
                   ),

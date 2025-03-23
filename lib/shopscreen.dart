@@ -86,7 +86,7 @@ class _ShopScreenState extends State<ShopScreen> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
-                          child: Text(textPrompt, style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1))),
+                          child: Text(textPrompt, textAlign: TextAlign.center, style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1))),
                         ),
                       ),
                       Row(
@@ -96,7 +96,10 @@ class _ShopScreenState extends State<ShopScreen> {
                             onPressed: () {
                               setState(() {
                                 if ((bal - 30) >= 0) {
-                                  hp = (hp + 25) % 101;
+                                  hp += 25;
+                                  if (hp > 100) {
+                                    hp = 100;
+                                  }
                                   bal -= 30;
                                   foodCount++;
                                   if (actionCount == 1) {
@@ -118,7 +121,7 @@ class _ShopScreenState extends State<ShopScreen> {
                             ),
                             child: Icon(Icons.lunch_dining, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
                           ),
-                          SizedBox(width: 90),
+                          SizedBox(width: 120),
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
