@@ -115,6 +115,7 @@ class EventScreenState extends State<EventScreen> {
                                   }
                                   else {
                                     bal += eventEffects[day];
+                                    buyCount++;
                                     Navigator.pushReplacementNamed(context, "/actions");
                                   }
                                 });
@@ -129,6 +130,7 @@ class EventScreenState extends State<EventScreen> {
                             SizedBox(width: 120),
                             ElevatedButton(
                               onPressed: () {
+                                saveCount++;
                                 Navigator.pushReplacementNamed(context, "/actions");
                               },
                               style: ElevatedButton.styleFrom(

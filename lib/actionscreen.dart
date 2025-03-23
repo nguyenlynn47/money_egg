@@ -116,6 +116,7 @@ class _ActionScreenState extends State<ActionScreen> {
                             onPressed: () {
                               setState(() {
                                 actionCount--;
+                                saveCount++;
                                 Navigator.pushReplacementNamed(context, "/work");
                               });
                             },

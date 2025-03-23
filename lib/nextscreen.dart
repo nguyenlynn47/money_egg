@@ -28,7 +28,7 @@ void nextDay(BuildContext context) {
     }
     Navigator.pushReplacementNamed(context, "/end");
   }
-  else if (day == 6) {
+  else if (day == 7) {
     Navigator.pushReplacementNamed(context, "/stage1end");
   }
   else if (day < 14) {

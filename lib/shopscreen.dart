@@ -101,7 +101,6 @@ class _ShopScreenState extends State<ShopScreen> {
                                     hp = 100;
                                   }
                                   bal -= 30;
-                                  foodCount++;
                                   if (actionCount == 1) {
                                     Navigator.pushReplacementNamed(context, "/actions");
                                   }
@@ -127,7 +126,7 @@ class _ShopScreenState extends State<ShopScreen> {
                               setState(() {
                                 if ((bal - 40) >= 0) {
                                   bal -= 40;
-                                  toyCount++;
+                                  buyCount++;
                                   // add toy to collection
                                   if (actionCount == 1) {
                                     Navigator.pushReplacementNamed(context, "/actions");

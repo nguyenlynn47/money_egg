@@ -32,6 +32,8 @@ class EndScreen extends StatelessWidget {
                 debt = 1000;
                 paymentDueDate = 3;
                 actionCount = 2;
+                saveCount = 0;
+                buyCount = 0;
                 Navigator.pushReplacementNamed(context, "/event");
               },
               style: ElevatedButton.styleFrom(

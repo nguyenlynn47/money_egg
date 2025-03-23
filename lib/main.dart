@@ -50,10 +50,10 @@ int paymentDueDate = 3;
 int actionCount = 2;
 
 // Financial Personality Type Calculation
-int foodCount = 0;
 int saveCount = 0;
-int toyCount = 0;
 int buyCount = 0;
+String type = "";
+String typeImage = "";
 
 // Ending Message
 String endMessage = "Congratulations!\n\n With your excellent guidance, Egg developed financial awareness and learned how to manage its money to pay off its debt in time!\n\nCan you save even more money next time?";
