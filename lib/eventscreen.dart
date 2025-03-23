@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:money_egg/main.dart';
 
-var eventText = ["A homeless person asks Egg for \$10. Does Egg give it to them?", "Egg is craving something sweet. Does Egg treat themselves?", "Egg picks up sewing as a hobby. Should Egg buy a \$20 starter kit?"];
-var eventEffects = [-10, -10, -20];
+var eventText = ["A homeless person asks Egg for \$10. Does Egg give it to them?", "Egg is craving something sweet. Does Egg treat themselves?", "Egg picks up sewing as a hobby. Should Egg buy a \$20 starter kit?", "Egg wants to buy a \$10 book at the book fair. Does Egg buy it?", "Someone stole a tire from the bike Egg rides to school. Does Egg replace it for \$20?", "There’s a bake sale at Egg’s school. Does Egg buy a cookie for \$5?", "Egg’s favorite band is having a concert. Tickets are \$15. Does Egg attend?", "Egg’s friend is short \$5 for their lunch. Does Egg cover for them?", "Egg wants to join the volleyball club. The fee is \$25. Does Egg join the club?", "Someone wants \$10 in exchange for a mystery box. Does Egg buy it?", "The smell of freshly baked bread entices Egg. Does Egg buy an \$8 loaf?", "Egg wants new shoes. They cost \$60. Does Egg buy it?", "The state fair is on Friday and Egg’s friends are going. Tickets are \$10. Does Egg go?", "The LSU vs. Alabama football game is on Saturday. Does Egg buy a \$60 ticket?"];
+var eventEffects = [-10, -10, -20, -10, -20, -5, -15, -5, -25, -10, -8, -60, -10, -60];
 
 class EventScreen extends StatefulWidget {
   const EventScreen({super.key});
