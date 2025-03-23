@@ -9,6 +9,7 @@ class ActionScreen extends StatefulWidget {
 }
 
 class _ActionScreenState extends State<ActionScreen> {
+  String textPrompt = "Would you like to shop or work?";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,42 +75,48 @@ class _ActionScreenState extends State<ActionScreen> {
               child: Container(
                 color: Color.fromRGBO(236, 192, 250, 1),
                 child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            if (bal < 30) {
-                              print("You cannot buy anything");
-                            }
-                            else {
-                              actionCount--;
-                              Navigator.pushReplacementNamed(context, "/shop");
-                            }
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(30),
-                          backgroundColor: Color.fromRGBO(255, 255, 117, 1),
-                        ),
-                        child: Icon(Icons.shopping_basket, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
-                      ),
-                      SizedBox(width: 90),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            actionCount--;
-                            Navigator.pushReplacementNamed(context, "/work");
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(30),
-                          backgroundColor: Color.fromRGBO(255, 255, 117, 1),
-                        ),
-                        child: Icon(Icons.work, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
+                      Text(textPrompt),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                if (bal < 30) {
+                                  textPrompt = "Insufficient funds. You have to work.";
+                                }
+                                else {
+                                  actionCount--;
+                                  Navigator.pushReplacementNamed(context, "/shop");
+                                }
+                              });
+                            },
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(30),
+                              backgroundColor: Color.fromRGBO(255, 255, 117, 1),
+                            ),
+                            child: Icon(Icons.shopping_basket, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
+                          ),
+                          SizedBox(width: 90),
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                actionCount--;
+                                Navigator.pushReplacementNamed(context, "/work");
+                              });
+                            },
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(30),
+                              backgroundColor: Color.fromRGBO(255, 255, 117, 1),
+                            ),
+                            child: Icon(Icons.work, size: 70, color: Color.fromRGBO(254, 76, 160, 1)),
+                          ),
+                        ],
                       ),
                     ],
                   ),
