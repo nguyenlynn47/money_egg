@@ -12,6 +12,7 @@ class EventScreen extends StatefulWidget {
 }
 
 class EventScreenState extends State<EventScreen> {
+  String textPrompt = eventText[day];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +87,7 @@ class EventScreenState extends State<EventScreen> {
                             Padding(
                               padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
                               child: Text(
-                                eventText[day],
+                                textPrompt,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize: 30, color: Color.fromRGBO(32, 90, 234, 1)),
                               ),
@@ -102,8 +103,13 @@ class EventScreenState extends State<EventScreen> {
                             ElevatedButton(
                               onPressed: () {
                                 setState(() {
-                                  bal += eventEffects[day];
-                                  Navigator.pushReplacementNamed(context, "/actions");
+                                  if (bal < eventEffects[day].abs()) {
+                                    textPrompt = "Insufficient funds. You can't afford this.";
+                                  }
+                                  else {
+                                    bal += eventEffects[day];
+                                    Navigator.pushReplacementNamed(context, "/actions");
+                                  }
                                 });
                               },
                               style: ElevatedButton.styleFrom(
