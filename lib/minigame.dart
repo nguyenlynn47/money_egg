@@ -47,7 +47,11 @@ class _MinigameScreenState extends State<MinigameScreen> {
           body: Stack(
             children: [
               // Score label
-              Positioned(left: 20, top: 30, child: Text("SCORE: $score")),
+              Positioned(
+                left: 20,
+                top: 30,
+                child: Text("SCORE: $score",
+                  style: TextStyle(fontSize: 24, color: Color.fromRGBO(32, 90, 234, 1)),)),
               Positioned(
                 left: xPos,
                 bottom: yPos,
@@ -68,7 +72,7 @@ class _MinigameScreenState extends State<MinigameScreen> {
               ),
             ]
           ),
-          backgroundColor: Colors.pink,
+          backgroundColor: Color.fromRGBO(200, 244, 255, 1),
         ),
       )
     );
