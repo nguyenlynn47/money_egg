@@ -101,14 +101,7 @@ class _ActionScreenState extends State<ActionScreen> {
                         onPressed: () {
                           setState(() {
                             actionCount--;
-                            // Navigator.pushReplacementNamed(context, "/work");
-                            // over there we do bal += moneyEarned;
-                            if (actionCount == 1) {
-                              Navigator.pushReplacementNamed(context, "/actions");
-                            }
-                            else {
-                              Navigator.pushReplacementNamed(context, "/next");
-                            }
+                            Navigator.pushReplacementNamed(context, "/work");
                           });
                         },
                         style: ElevatedButton.styleFrom(

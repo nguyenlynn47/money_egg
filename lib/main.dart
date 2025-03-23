@@ -28,7 +28,7 @@ class MainApp extends StatelessWidget {
         "/event": (context) => EventScreen(),
         "/actions": (context) => ActionScreen(),
         "/shop": (context) => ShopScreen(),
-        //"/work": (context) => 
+        "/work": (context) => MinigameScreen(),
         "/next": (context) => NextScreen(),
         "/stage1end": (context) => const StageTransitionScreen(),
         "/evolved": (context) => const EvolvedScreen(),

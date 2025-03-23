@@ -1,29 +1,24 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:money_egg/main.dart';
 
 void main() {
-  runApp(const Minigame());
+  runApp(const MinigameScreen());
 }
 
 // Position variables
-double xPos = 0;
-double yPos = 0;
+double xPos = Random().nextDouble() * 250;
+double yPos = Random().nextDouble() * 425;
 
-// Function to generate new coin location
-// void newCoin(Timer timer) async {
-//   xPos = Random().nextDouble() * 250;
-//   yPos = Random().nextDouble() * 425;
-// }
-
-class Minigame extends StatefulWidget {
-  const Minigame({super.key});
+class MinigameScreen extends StatefulWidget {
+  const MinigameScreen({super.key});
 
   @override
-  State<Minigame> createState() => _MinigameState();
+  State<MinigameScreen> createState() => _MinigameScreenState();
 }
 
-class _MinigameState extends State<Minigame> {
+class _MinigameScreenState extends State<MinigameScreen> {
 
   // Variable to store score
   int score = 0;
@@ -31,23 +26,17 @@ class _MinigameState extends State<Minigame> {
 
   @override
   void initState() {
-    super.initState();
-
-    timer = Timer.periodic(
-      const Duration(seconds: 1),
-      (timer) {
-        setState(() {
-          xPos = Random().nextDouble() * 250;
-          yPos = Random().nextDouble() * 425;
-        });
+    Timer(Duration(seconds: 10), () {
+      bal += score;
+      if (actionCount == 1) {
+        Navigator.pushReplacementNamed(context, "/actions");
       }
-    );
-  }
+      else {
+        Navigator.pushReplacementNamed(context, "/next");
+      }
+    });
 
-  @override
-  void dispose() {
-    super.dispose();
-    timer?.cancel();
+    super.initState();
   }
 
   @override
@@ -64,6 +53,10 @@ class _MinigameState extends State<Minigame> {
                 bottom: yPos,
                 child: GestureDetector(
                   onTap: () {
+                    setState(() {
+                      xPos = Random().nextDouble() * 250;
+                      yPos = Random().nextDouble() * 425;
+                    });
                     // Update score/income
                     score = score + 10;
                   },
