@@ -5,14 +5,16 @@ void nextDay(BuildContext context) {
   day++;
   hp -= 15;
   actionCount = 2;
-  if (paymentDueDate-- == -1) {
-    paymentDueDate = 3;
-  }
   if (hp <= 0) {
     // Set end message here
     Navigator.pushReplacementNamed(context, "/end");
   }
-  if (day == 14) {
+  paymentDueDate--;
+  if (paymentDueDate == 0) {
+    paymentDueDate = 3;
+    Navigator.pushReplacementNamed(context, "/payment");
+  }
+  else if (day == 14) {
     // Set end message here
     Navigator.pushReplacementNamed(context, "/end");
   }

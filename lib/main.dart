@@ -7,6 +7,7 @@ import 'package:money_egg/actionscreen.dart';
 import 'package:money_egg/shopscreen.dart';
 import 'package:money_egg/minigame.dart';
 import 'package:money_egg/nextscreen.dart';
+import 'package:money_egg/paymentscreen.dart';
 import 'package:money_egg/stagetransitionscreen.dart';
 import 'package:money_egg/evolvedscreen.dart';
 import 'package:money_egg/endscreen.dart';
@@ -30,6 +31,7 @@ class MainApp extends StatelessWidget {
         "/shop": (context) => ShopScreen(),
         "/work": (context) => MinigameScreen(),
         "/next": (context) => NextScreen(),
+        "/payment": (context) => PaymentScreen(),
         "/stage1end": (context) => const StageTransitionScreen(),
         "/evolved": (context) => const EvolvedScreen(),
         "/end": (context) => const EndScreen(),
