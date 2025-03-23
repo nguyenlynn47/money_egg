@@ -36,7 +36,7 @@ class EndScreen extends StatelessWidget {
                 buyCount = 0;
                 type = "";
                 typeImage = "https://i.imgur.com/iKhDk7N.png";
-                scale = 2;   
+                scale = 1.5;   
                 Navigator.pushReplacementNamed(context, "/start");
               },
               style: ElevatedButton.styleFrom(

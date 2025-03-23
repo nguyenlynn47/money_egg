@@ -11,7 +11,19 @@ class StartScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Game Title Image
+            Container(
+              margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Text("Money Egg", textAlign: TextAlign.center, style: TextStyle(fontSize: 65, color: Color.fromRGBO(254, 76, 160, 1))),
+              ),
+            ),
+            SizedBox(height: 30),
+            Image.network("https://i.imgur.com/HablDhz.png"),
             // Egg picture
             ElevatedButton(
               onPressed: () {
